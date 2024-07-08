@@ -9,3 +9,19 @@ This is a web development assessment from youX.
 5. Use one of the terminal to navigate to the ***backend*** folder and run `npm i` to install all dependencies, then run `node app.js` to run the server and connect to the database.
 6. Use another terminal window and navigate to the ***frontend*** folder and run  `npm i`  to install all dependencies, then run "npm start" to render the frontend.
 7. Ensure that MongoDB Compass connects to the correct url.
+
+## Table Operations
+- **LOAD**: Load universities from API.
+- **DELETE**: Remove the last university in the array.
+- **ADD**: Copy the information of the first university and then append to the end of the array.
+- **LOAD FROM DATABASE**: Load universities from database instead of API.
+
+## Update University (Database Operation)
+1. Choose a university to be updated from the number in the table (data is loaded from database).
+2. Any number out of index range will not proceed further steps.
+3. Click the magnifier icon for searching.
+4. Update the values in different fields and submit.
+
+## Database Operations Area
+- **DELETE**: Remove the last university in the database.
+- **ADD**: Copy the information of the first university and append to database.

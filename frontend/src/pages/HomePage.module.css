@@ -1,11 +1,13 @@
 .table_container {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10rem;
+    margin-top: 3rem;
     height: 30rem;
     overflow: auto;
     width: 80%;
     border: 2px solid;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .tableElement {
