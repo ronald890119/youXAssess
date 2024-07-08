@@ -11,4 +11,13 @@ const uniController = require('../controllers/uniController');
 // load university data
 router.get('/load', uniController.load);
 
+// add first university to the end
+router.post('/add', uniController.add);
+
+// create new university
+router.post('/create', uniController.create);
+
+// delete last item
+router.delete('/delete', uniController.delete);
+
 module.exports = router;
