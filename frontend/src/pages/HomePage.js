@@ -12,6 +12,7 @@ function HomePage() {
 			<table className={styles.tableElement}>
 				<thead>
 					<tr>
+						<th>No.</th>
 						<th>alpha_two_code</th>
 						<th>name</th>
 						<th>domains</th>
@@ -21,8 +22,8 @@ function HomePage() {
 					</tr>
 				</thead>
 				<tbody>
-					{state.uniData.map((uni) => (
-						<TableRow uni={uni}/>
+					{state.uniData.map((uni, index) => (
+						<TableRow uni={uni} index={index}/>
 					))}
 				</tbody>
 			</table>

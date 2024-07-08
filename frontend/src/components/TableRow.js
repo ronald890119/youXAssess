@@ -2,6 +2,7 @@
 function TableRow(props) {
 	return (
 		<tr>
+			<td>{props.index + 1}</td>
 			<td>{props.uni["alpha_two_code"]}</td>
 			<td>{props.uni["name"]}</td>
 			<td>{props.uni["domains"].map((domain) => (
