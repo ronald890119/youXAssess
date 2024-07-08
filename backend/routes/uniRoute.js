@@ -14,8 +14,11 @@ router.get('/load', uniController.load);
 // add first university to the end
 router.post('/add', uniController.add);
 
-// create new university
-router.post('/create', uniController.create);
+// get university by index
+router.get('/retrieve/:index', uniController.getByIndex);
+
+// update information of university
+router.put('/update', uniController.update);
 
 // delete last item
 router.delete('/delete', uniController.delete);

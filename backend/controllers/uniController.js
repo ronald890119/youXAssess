@@ -26,17 +26,30 @@ exports.add = async(req, res) => {
     }
 }
 
-// controller to create a new university
-exports.create = async(req, res) => {
+exports.getByIndex = async(req, res) => {
     try {
-        const {alpha_two_code,
+        let result = await University.getByIndex(req.params["index"]);
+
+        res.send(result);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ error_code: 5000, message: "Server error." });
+    }
+}
+
+// controller to update a university
+exports.update = async(req, res) => {
+    try {
+        const {index, 
+            alpha_two_code,
             name,
             domains,
             web_pages,
             country,
             state_province} = req.body;
 
-        const newUniversity = await University.create({
+        const newUniversity = await University.update({
+            index,
             alpha_two_code,
             name,
             domains,

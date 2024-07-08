@@ -51,8 +51,19 @@ UniversitySchema.statics.add = async function() {
     }
 }
 
-// Create a new university
-UniversitySchema.statics.create = async function({
+// Get university by index
+UniversitySchema.statics.getByIndex = async function(index) {
+    const allUniversity = await this.find();
+    if(index >= 0 && index < allUniversity.length) {
+        return allUniversity[index];
+    } else {
+        return null;
+    }
+}
+
+// Update a new university
+UniversitySchema.statics.update = async function({
+    index,
     alpha_two_code,
     name,
     domains,
@@ -60,16 +71,18 @@ UniversitySchema.statics.create = async function({
     country,
     state_province
 }) {
-    const newUniversity = new University({
-        alpha_two_code,
-        name,
-        domains,
-        web_pages,
-        country,
+    const allUniversity = await this.find();
+    console.log(allUniversity[index]["_id"]);
+    return this.findOneAndUpdate({
+        _id: allUniversity[index]["_id"]
+    }, {
+        alpha_two_code: alpha_two_code,
+        name: name, 
+        domains: domains,
+        web_pages: web_pages,
+        country: country,
         "state-province": state_province
     });
-
-    return newUniversity.save();
 }
 
 // Delete last item from array
